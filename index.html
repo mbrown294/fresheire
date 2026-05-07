@@ -1,442 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fresh Eire — Irish food, drink & nonsense in London</title>
-  <meta name="description" content="Fresh Eire brings the best of Irish food, drink and craic to London. Starting with a market stall in Bermondsey. Sign up for updates.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --green: #2D6A4F;
-      --green-dark: #1B4332;
-      --gold: #D4A574;
-      --gold-light: #E8C9A0;
-      --cream: #FDF8F0;
-      --dark: #1A1A2E;
-      --text: #2C2C2C;
-      --text-light: #5A5A5A;
-      --white: #FFFFFF;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Eire | Irish Food, Drink & Craic in London</title>
+    <meta name="description" content="Fresh Eire brings Irish food, drink, and nonsense to London. Fifteens, spice bags, Ballymaloe, craft beer, and the craic.">
+    <meta property="og:title" content="Fresh Eire | Irish Magic in London">
+    <meta property="og:description" content="We don't miss Ireland. We miss the bits. The fifteens. The spice bags. The Football Special. So we're bringing them to London.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fresheire.co.uk">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #1a1a2e;
+            --green: #2d6a4f;
+            --green-light: #40916c;
+            --gold: #d4a574;
+            --gold-light: #e8c9a0;
+            --cream: #f5f0e8;
+            --warm: #b85042;
+            --white: #ffffff;
+            --text: #333333;
+            --muted: #8a8a8a;
+        }
 
-    body {
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+        html { scroll-behavior: smooth; }
 
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      background: var(--green-dark);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
+        body {
+            font-family: 'Nunito', -apple-system, sans-serif;
+            background: var(--dark);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(45,106,79,0.4) 0%, transparent 70%),
-                  radial-gradient(ellipse at 70% 50%, rgba(212,165,116,0.15) 0%, transparent 60%);
-      pointer-events: none;
-    }
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(45, 106, 79, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(184, 80, 66, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 0.3rem;
-      letter-spacing: -0.5px;
-    }
+        .gold-line {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
 
-    .hero .tagline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: var(--gold-light);
-      font-weight: 400;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
 
-    .hero p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.85);
-      max-width: 550px;
-      margin: 0 auto;
-    }
+        .flag {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            animation: wave 2s ease-in-out infinite;
+        }
 
-    .scroll-hint {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--gold);
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.7;
-      animation: bob 2s ease-in-out infinite;
-    }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(8deg); }
+            75% { transform: rotate(-5deg); }
+        }
 
-    @keyframes bob {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--white);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
+            line-height: 1.1;
+        }
 
-    /* Sections */
-    .section {
-      padding: 5rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
 
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--green-dark);
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 2rem;
+        }
 
-    .section p {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      margin-bottom: 1.2rem;
-      line-height: 1.8;
-    }
+        .intro {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--cream);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
 
-    .section p strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+        .intro strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
 
-    /* The Bits list */
-    .the-bits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1.5rem 0;
-      list-style: none;
-    }
+        /* ── THE WEE SHACK SECTION ── */
+        .shack-section {
+            background: var(--green);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
 
-    .the-bits li {
-      background: var(--white);
-      border: 1.5px solid var(--gold-light);
-      border-radius: 2rem;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.95rem;
-      color: var(--green-dark);
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
+        .shack-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
 
-    .the-bits li:hover {
-      background: var(--green-dark);
-      color: var(--white);
-      border-color: var(--green-dark);
-    }
+        .shack-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    /* Divider */
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: var(--gold);
-      margin: 3rem auto;
-      border-radius: 2px;
-    }
+        .shack-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
 
-    /* Signup */
-    .signup-section {
-      background: var(--green-dark);
-      color: var(--white);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+        .shack-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--white);
+            margin-bottom: 1.2rem;
+        }
 
-    .signup-section h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--white);
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      margin-bottom: 0.5rem;
-    }
+        .shack-desc {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
 
-    .signup-section p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
 
-    .signup-form {
-      display: flex;
-      gap: 0.75rem;
-      max-width: 480px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .menu-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 1.2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, background 0.2s;
+        }
 
-    .signup-form input[type="email"] {
-      flex: 1;
-      min-width: 250px;
-      padding: 0.85rem 1.2rem;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 6px;
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+        .menu-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.15);
+        }
 
-    .signup-form input[type="email"]::placeholder {
-      color: rgba(255,255,255,0.4);
-    }
+        .menu-card .emoji {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .signup-form input[type="email"]:focus {
-      border-color: var(--gold);
-    }
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
 
-    .signup-form button {
-      padding: 0.85rem 2rem;
-      background: var(--gold);
-      color: var(--dark);
-      border: none;
-      border-radius: 6px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
+        .menu-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
 
-    .signup-form button:hover {
-      background: var(--gold-light);
-    }
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0,0,0,0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            border: 1px solid rgba(212,165,116,0.3);
+        }
 
-    .signup-form button:active {
-      transform: scale(0.97);
-    }
+        /* ── EMAIL SIGNUP ── */
+        .signup-section {
+            background: var(--dark);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
 
-    .signup-form button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+        .signup-inner {
+            max-width: 550px;
+            margin: 0 auto;
+        }
 
-    .signup-success {
-      display: none;
-      font-size: 1.1rem;
-      color: var(--gold-light);
-      margin-top: 1rem;
-      font-weight: 600;
-    }
+        .signup-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
 
-    .signup-error {
-      display: none;
-      font-size: 0.95rem;
-      color: #ff6b6b;
-      margin-top: 0.75rem;
-    }
+        .signup-sub {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
 
-    /* Social */
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+        .signup-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
 
-    .social-links a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
+        .signup-form input[type="email"] {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid rgba(212,165,116,0.3);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: var(--cream);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
 
-    .social-links a:hover {
-      color: var(--gold);
-    }
+        .signup-form input[type="email"]:focus {
+            border-color: var(--gold);
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      background: var(--dark);
-      color: rgba(255,255,255,0.4);
-      font-size: 0.85rem;
-    }
+        .signup-form input[type="email"]::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
 
-    footer .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
+        .signup-form button {
+            padding: 0.9rem 1.8rem;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
 
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+        .signup-form button:hover {
+            background: var(--gold-light);
+        }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        .signup-form button:active {
+            transform: scale(0.98);
+        }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      .hero { padding: 2rem 1.5rem; }
-      .section { padding: 3.5rem 1.5rem; }
-      .signup-section { padding: 3rem 1.5rem; }
-      .signup-form input[type="email"] { min-width: 100%; }
-      .social-links { flex-wrap: wrap; gap: 1rem; }
-    }
-  </style>
+        .signup-note {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .signup-success {
+            display: none;
+            padding: 1rem;
+            background: rgba(45, 106, 79, 0.2);
+            border: 1px solid rgba(45, 106, 79, 0.4);
+            border-radius: 8px;
+            color: var(--gold-light);
+            font-size: 0.95rem;
+        }
+
+        /* ── SOCIALS ── */
+        .socials-section {
+            background: var(--dark);
+            padding: 0 2rem 4rem;
+            text-align: center;
+        }
+
+        .socials-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.3rem;
+            border: 1px solid rgba(212,165,116,0.3);
+            border-radius: 50px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .social-link:hover {
+            background: rgba(212,165,116,0.1);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            line-height: 1.6;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 600px) {
+            .signup-form {
+                flex-direction: column;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .socials-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Fresh Eire</h1>
-      <p class="tagline">Irish food, drink & nonsense in London</p>
-      <p>
-        We're two friends from Ireland living in London.
-        We love it here, but we miss the bits. The pints. The fifteens. The spice bags.
-        The Ballymaloe on everything. A Football Special (IYKYK)
-        So we're doing something about it.
-      </p>
-    </div>
-    <div class="scroll-hint">&#8595;</div>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="gold-line"></div>
+        <div class="hero-content">
+            <div class="flag">&#127470;&#127466;</div>
+            <h1 class="brand">FRESH EIRE</h1>
+            <p class="tagline">Bringing the Irish magic to London</p>
+            <div class="divider"></div>
+            <p class="intro">
+                We don't miss Ireland. Sure we're grand over here.<br><br>
+                We miss <strong>the bits</strong>. The fifteens. The spice bags.
+                The Ballymaloe on everything. A cold Football Special on a Saturday.
+                Tayto that actually tastes like something. The craic and the nonsense
+                and the thing where someone brings out a traybake and suddenly
+                it's a whole event.<br><br>
+                So we're bringing the Irish magic to London.
+                <strong>Fresh Eire</strong> is just getting started.
+            </p>
+        </div>
+    </section>
 
-  <!-- Step One -->
-  <section class="section fade-in">
-    <h2>Step One: A Market Stall</h2>
-    <p>
-      We've got big plans, but we're starting where it matters: a stall at
-      <strong>Bermondsey Blue Market</strong>, bringing the best of Irish food,
-      drink and craic to South London every Saturday.
-    </p>
-    <p>Think imports you can't find anywhere else, homemade bakes your granny would approve of, a proper cuppa, and craft Irish beers you've never heard of.</p>
+    <!-- WHAT'S FIRST -->
+    <section class="shack-section">
+        <div class="shack-inner fade-in">
+            <p class="shack-label">Step One</p>
+            <h2 class="shack-title">A market stall. Obviously.</h2>
+            <p class="shack-desc">
+                We've got ambitions for all sorts.
+                But every great Irish enterprise starts somewhere.
+                <br><br>
+                Ours starts with a table, some homemade bakes, and the firm belief
+                that if we build it, they will come. A proper Irish food and drink
+                stall at a London market.
+                Coffee, craic, and more fifteens than is medically advisable.
+            </p>
 
-    <ul class="the-bits">
-      <li>Tayto</li>
-      <li>Ballymaloe Relish</li>
-      <li>Football Special</li>
-      <li>Barry's Tea</li>
-      <li>Irish Dairy Milk</li>
-      <li>Manhattan Popcorn</li>
-      <li>Fifteens</li>
-      <li>Soda Bread</li>
-      <li>Potato Bread</li>
-      <li>Traybakes</li>
-      <li>Craft Irish Beer</li>
-    </ul>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="emoji">&#9749;</div>
+                    <h3>Coffee & Bakes</h3>
+                    <p>Proper coffee. Fifteens. Soda bread. Potato bread. Traybakes. The works.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="emoji">&#127470;&#127466;</div>
+                    <h3>The Good Stuff</h3>
+                    <p>Tayto. Ballymaloe. Football Special. Irish Dairy Milk. Spice bag seasoning. Manhattan Popcorn. Barry's.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="emoji">&#127866;</div>
+                    <h3>Craft Beer & Drinks</h3>
+                    <p>Irish craft beer beyond Guinness. Club Orange. Rock Shandy. We're basically a pub with a gazebo.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="emoji">&#128064;</div>
+                    <h3>And Then Some</h3>
+                    <p>This is just the start. We've got plans. Big ones. Stupid ones. Stay tuned.</p>
+                </div>
+            </div>
 
-    <p>
-      This is just the start. We have ambitions for much more than a stall,
-      but sure look, you have to start somewhere. Expect more from us.
-    </p>
-  </section>
+            <div class="location-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Bermondsey Blue Market &middot; Saturdays &middot; Coming Summer 2026
+            </div>
+        </div>
+    </section>
 
-  <div class="divider"></div>
+    <!-- EMAIL SIGNUP -->
+    <section class="signup-section">
+        <div class="signup-inner fade-in">
+            <h2 class="signup-title">Get the heads up</h2>
+            <p class="signup-sub">
+                Be the first to know when Fresh Eire launches.
+                We'll email you once. Maybe twice.
+                We will not spam you because we have enough on our plates
+                (literally, we're baking 400 fifteens).
+            </p>
+            <form class="signup-form" id="signupForm">
+                <input type="email" placeholder="yourname@email.com" required id="emailInput">
+                <button type="submit">I'm in</button>
+            </form>
+            <p class="signup-note">No spam. Just fifteens updates. Unsubscribe whenever.</p>
+            <div class="signup-success" id="signupSuccess">
+                Class. You're on the list. We'll be in touch when we launch.
+                In the meantime, follow us on Instagram for the chaos. &#127470;&#127466;
+            </div>
+        </div>
+    </section>
 
-  <!-- Signup -->
-  <section class="signup-section fade-in">
-    <h2>Get the updates</h2>
-    <p>Be the first to know when we launch. No spam, just the craic.</p>
-    <form class="signup-form" id="signupForm">
-      <input type="email" id="emailInput" placeholder="your@email.com" required>
-      <button type="submit" id="submitBtn">Count me in</button>
-    </form>
-    <p class="signup-success" id="successMsg">You're in! We'll be in touch. Sláinte.</p>
-    <p class="signup-error" id="errorMsg">Something went wrong. Give it another go?</p>
+    <!-- SOCIALS -->
+    <section class="socials-section">
+        <div class="socials-links fade-in">
+            <a href="https://instagram.com/fresheire.co.uk" target="_blank" rel="noopener" class="social-link">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                @fresheire.co.uk
+            </a>
+            <a href="https://tiktok.com/@fresheire.co.uk" target="_blank" rel="noopener" class="social-link">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.2v-3.44a4.85 4.85 0 01-5.58-1.49V6.69h5.58z"/></svg>
+                @fresheire.co.uk
+            </a>
+            <a href="mailto:hello@fresheire.co.uk" class="social-link">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                hello@fresheire.co.uk
+            </a>
+        </div>
+    </section>
 
-    <div class="social-links">
-      <a href="https://instagram.com/fresheire" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@fresheire" target="_blank">TikTok</a>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-brand">Fresh Eire</p>
+        <p class="footer-text">
+            Irish magic in London. More to come.<br>
+            Two friends. Big plans. Zero sense.<br><br>
+            &copy; 2026 Fresh Eire. All rights reserved.<br>
+            Made with Barry's Tea and blind optimism.
+        </p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-name">Fresh Eire</div>
-    <p>Bermondsey, London &middot; Coming Summer 2026</p>
-  </footer>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-  <script>
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        // Email signup — posts to Google Sheets via Apps Script
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value.trim();
+            if (!email) return;
 
-    // Newsletter signup — posts to Google Sheets via Apps Script
-    const form = document.getElementById('signupForm');
-    const emailInput = document.getElementById('emailInput');
-    const submitBtn = document.getElementById('submitBtn');
-    const successMsg = document.getElementById('successMsg');
-    const errorMsg = document.getElementById('errorMsg');
+            const btn = this.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-      if (!email) return;
+            try {
+                await fetch('https://script.google.com/macros/s/AKfycbxY_h_0e16CouyOpIFfcPyuHljkql56vUULbyHjmteIFlBXWdTrARpO9Eu2nlzKDNBJ/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      errorMsg.style.display = 'none';
-
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbxY_h_0e16CouyOpIFfcPyuHljkql56vUULbyHjmteIFlBXWdTrARpO9Eu2nlzKDNBJ/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email })
+                document.getElementById('signupForm').style.display = 'none';
+                document.querySelector('.signup-note').style.display = 'none';
+                document.getElementById('signupSuccess').style.display = 'block';
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = "I'm in";
+                alert('Something went wrong — give it another go?');
+            }
         });
+    </script>
 
-        // no-cors means we can't read the response, so assume success
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      } catch (err) {
-        errorMsg.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Count me in';
-      }
-    });
-  </script>
 </body>
 </html>

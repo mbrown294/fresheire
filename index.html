@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
             --dark: #1a1a2e;
             --green: #2d6a4f;
@@ -27,16 +26,13 @@
             --text: #333333;
             --muted: #8a8a8a;
         }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Nunito', -apple-system, sans-serif;
             background: var(--dark);
             color: var(--cream);
             overflow-x: hidden;
         }
-
         /* ── HERO ── */
         .hero {
             min-height: 100vh;
@@ -49,7 +45,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -60,32 +55,27 @@
                 radial-gradient(ellipse at 50% 80%, rgba(184, 80, 66, 0.08) 0%, transparent 50%);
             pointer-events: none;
         }
-
         .gold-line {
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 4px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 700px;
         }
-
         .flag {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             animation: wave 2s ease-in-out infinite;
         }
-
         @keyframes wave {
             0%, 100% { transform: rotate(0deg); }
             25% { transform: rotate(8deg); }
             75% { transform: rotate(-5deg); }
         }
-
         .brand {
             font-family: 'Playfair Display', serif;
             font-size: clamp(3rem, 8vw, 5rem);
@@ -94,7 +84,6 @@
             margin-bottom: 0.3rem;
             line-height: 1.1;
         }
-
         .tagline {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1rem, 3vw, 1.4rem);
@@ -102,14 +91,12 @@
             font-style: italic;
             margin-bottom: 2rem;
         }
-
         .divider {
             width: 80px;
             height: 2px;
             background: var(--gold);
             margin: 0 auto 2rem;
         }
-
         .intro {
             font-size: 1.05rem;
             line-height: 1.7;
@@ -117,12 +104,10 @@
             margin-bottom: 2.5rem;
             opacity: 0.9;
         }
-
         .intro strong {
             color: var(--gold);
             font-weight: 600;
         }
-
         /* ── THE WEE SHACK SECTION ── */
         .shack-section {
             background: var(--green);
@@ -130,7 +115,6 @@
             text-align: center;
             position: relative;
         }
-
         .shack-section::before {
             content: '';
             position: absolute;
@@ -138,12 +122,10 @@
             height: 3px;
             background: var(--gold);
         }
-
         .shack-inner {
             max-width: 800px;
             margin: 0 auto;
         }
-
         .shack-label {
             font-size: 0.75rem;
             letter-spacing: 0.3em;
@@ -152,28 +134,24 @@
             margin-bottom: 0.8rem;
             font-weight: 600;
         }
-
         .shack-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 5vw, 3rem);
             color: var(--white);
             margin-bottom: 1.2rem;
         }
-
         .shack-desc {
             font-size: 1rem;
             line-height: 1.8;
             color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
         }
-
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 2.5rem;
         }
-
         .menu-card {
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.15);
@@ -182,30 +160,25 @@
             backdrop-filter: blur(10px);
             transition: transform 0.2s, background 0.2s;
         }
-
         .menu-card:hover {
             transform: translateY(-3px);
             background: rgba(255,255,255,0.15);
         }
-
         .menu-card .emoji {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
-
         .menu-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             color: var(--white);
             margin-bottom: 0.3rem;
         }
-
         .menu-card p {
             font-size: 0.85rem;
             color: rgba(255,255,255,0.7);
             line-height: 1.5;
         }
-
         .location-badge {
             display: inline-flex;
             align-items: center;
@@ -217,39 +190,33 @@
             color: var(--gold-light);
             border: 1px solid rgba(212,165,116,0.3);
         }
-
         /* ── EMAIL SIGNUP ── */
         .signup-section {
             background: var(--dark);
             padding: 4rem 2rem;
             text-align: center;
         }
-
         .signup-inner {
             max-width: 550px;
             margin: 0 auto;
         }
-
         .signup-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--white);
             margin-bottom: 0.5rem;
         }
-
         .signup-sub {
             color: var(--muted);
             font-size: 0.95rem;
             margin-bottom: 2rem;
             line-height: 1.6;
         }
-
         .signup-form {
             display: flex;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
-
         .signup-form input[type="email"] {
             flex: 1;
             padding: 0.9rem 1.2rem;
@@ -262,15 +229,12 @@
             outline: none;
             transition: border-color 0.2s;
         }
-
         .signup-form input[type="email"]:focus {
             border-color: var(--gold);
         }
-
         .signup-form input[type="email"]::placeholder {
             color: rgba(255,255,255,0.3);
         }
-
         .signup-form button {
             padding: 0.9rem 1.8rem;
             background: var(--gold);
@@ -284,20 +248,16 @@
             transition: background 0.2s, transform 0.1s;
             white-space: nowrap;
         }
-
         .signup-form button:hover {
             background: var(--gold-light);
         }
-
         .signup-form button:active {
             transform: scale(0.98);
         }
-
         .signup-note {
             font-size: 0.8rem;
             color: rgba(255,255,255,0.3);
         }
-
         .signup-success {
             display: none;
             padding: 1rem;
@@ -307,21 +267,18 @@
             color: var(--gold-light);
             font-size: 0.95rem;
         }
-
         /* ── SOCIALS ── */
         .socials-section {
             background: var(--dark);
             padding: 0 2rem 4rem;
             text-align: center;
         }
-
         .socials-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
         }
-
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -335,19 +292,16 @@
             font-weight: 500;
             transition: all 0.2s;
         }
-
         .social-link:hover {
             background: rgba(212,165,116,0.1);
             border-color: var(--gold);
             transform: translateY(-2px);
         }
-
         .social-link svg {
             width: 18px;
             height: 18px;
             fill: currentColor;
         }
-
         /* ── FOOTER ── */
         footer {
             background: rgba(0,0,0,0.3);
@@ -355,20 +309,17 @@
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
-
         .footer-brand {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             color: var(--gold);
             margin-bottom: 0.5rem;
         }
-
         .footer-text {
             font-size: 0.8rem;
             color: rgba(255,255,255,0.3);
             line-height: 1.6;
         }
-
         /* ── MOBILE ── */
         @media (max-width: 600px) {
             .signup-form {
@@ -382,14 +333,12 @@
                 align-items: center;
             }
         }
-
         /* ── ANIMATIONS ── */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
@@ -397,7 +346,6 @@
     </style>
 </head>
 <body>
-
     <!-- HERO -->
     <section class="hero">
         <div class="gold-line"></div>
@@ -418,7 +366,6 @@
             </p>
         </div>
     </section>
-
     <!-- WHAT'S FIRST -->
     <section class="shack-section">
         <div class="shack-inner fade-in">
@@ -433,7 +380,6 @@
                 stall at a London market.
                 Coffee, craic, and more fifteens than is medically advisable.
             </p>
-
             <div class="menu-grid">
                 <div class="menu-card">
                     <div class="emoji">&#9749;</div>
@@ -456,14 +402,12 @@
                     <p>This is just the start. We've got plans. Big ones. Stupid ones. Stay tuned.</p>
                 </div>
             </div>
-
             <div class="location-badge">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Bermondsey Blue Market &middot; Saturdays &middot; Coming Summer 2026
             </div>
         </div>
     </section>
-
     <!-- EMAIL SIGNUP -->
     <section class="signup-section">
         <div class="signup-inner fade-in">
@@ -485,7 +429,6 @@
             </div>
         </div>
     </section>
-
     <!-- SOCIALS -->
     <section class="socials-section">
         <div class="socials-links fade-in">
@@ -503,7 +446,6 @@
             </a>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer>
         <p class="footer-brand">Fresh Eire</p>
@@ -514,7 +456,6 @@
             Made with Barry's Tea and blind optimism. (and a few pints)
         </p>
     </footer>
-
     <script>
         // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
@@ -524,27 +465,21 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
         // Email signup — posts to Google Sheets via Apps Script
         document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const email = document.getElementById('emailInput').value.trim();
             if (!email) return;
-
             const btn = this.querySelector('button');
             btn.disabled = true;
             btn.textContent = 'Sending...';
-
             try {
-                await fetch('https://script.google.com/macros/s/AKfycbxY_h_0e16CouyOpIFfcPyuHljkql56vUULbyHjmteIFlBXWdTrARpO9Eu2nlzKDNBJ/exec', {
+                await fetch('https://script.google.com/macros/s/AKfycbwk9hJARL4J-CHSqMgUYofrtoclDDeqoMq2s6LtJVwwFJOiObYexEQ_q_LvC2Vj5BHV/exec', {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: email })
+                    body: new URLSearchParams({ email: email })
                 });
-
                 document.getElementById('signupForm').style.display = 'none';
                 document.querySelector('.signup-note').style.display = 'none';
                 document.getElementById('signupSuccess').style.display = 'block';
@@ -555,6 +490,5 @@
             }
         });
     </script>
-
 </body>
 </html>

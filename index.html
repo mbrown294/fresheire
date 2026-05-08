@@ -418,8 +418,11 @@
                 We will not spam you because we have enough on our plates
                 (literally, spicebag and a traybake).
             </p>
-            <form class="signup-form" id="signupForm">
-                <input type="email" placeholder="yourname@email.com" required id="emailInput">
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <form class="signup-form" id="signupForm"
+                  action="https://script.google.com/macros/s/AKfycbwk9hJARL4J-CHSqMgUYofrtoclDDeqoMq2s6LtJVwwFJOiObYexEQ_q_LvC2Vj5BHV/exec"
+                  method="POST" target="hidden_iframe">
+                <input type="email" name="email" placeholder="yourname@email.com" required id="emailInput">
                 <button type="submit">I'm in</button>
             </form>
             <p class="signup-note">No spam. Just fifteens updates. Unsubscribe whenever.</p>
@@ -466,28 +469,17 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        // Email signup — posts to Google Sheets via Apps Script
-        document.getElementById('signupForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const email = document.getElementById('emailInput').value.trim();
-            if (!email) return;
-            const btn = this.querySelector('button');
+
+        // Email signup — real form POST to hidden iframe (no CORS issues)
+        document.getElementById('signupForm').addEventListener('submit', function() {
+            var btn = this.querySelector('button');
             btn.disabled = true;
             btn.textContent = 'Sending...';
-            try {
-                await fetch('https://script.google.com/macros/s/AKfycbwk9hJARL4J-CHSqMgUYofrtoclDDeqoMq2s6LtJVwwFJOiObYexEQ_q_LvC2Vj5BHV/exec', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: new URLSearchParams({ email: email })
-                });
+            setTimeout(function() {
                 document.getElementById('signupForm').style.display = 'none';
                 document.querySelector('.signup-note').style.display = 'none';
                 document.getElementById('signupSuccess').style.display = 'block';
-            } catch (err) {
-                btn.disabled = false;
-                btn.textContent = "I'm in";
-                alert('Something went wrong — give it another go?');
-            }
+            }, 1500);
         });
     </script>
 </body>
